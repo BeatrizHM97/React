@@ -1,0 +1,11 @@
+.TodoCounterTitle{
+    font-size: 30px;
+    text-align: center;
+    color: #00a27f;
+}
+.TodoCounterSubtitle {
+    text-align: center;
+    color: #00a27f;
+    font-size: 20px;
+    margin-top: 0;
+}

@@ -1,0 +1,12 @@
+.TodoHeader {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px 20px 0 0;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.TodoHeader h3 {
+    color: #e66767;
+    font-size: 18px;
+}
