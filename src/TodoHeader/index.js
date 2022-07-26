@@ -1,6 +1,6 @@
 import React from "react";
 import './TodoHeader.css';
-import { TodoButton } from '../TodoButton/TodoButton';
+import { TodoButton } from '../TodoButton';
 
 function TodoHeader() {
     return (
