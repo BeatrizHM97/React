@@ -12,6 +12,7 @@ function TodoProvider(props) {
   } = useLocalStorage('TODOS_V1', []);
 
   const [searchValue, setSearchValue] = useState('');
+  const [callModal, setCallModal] = useState(false);
 
   let serchedTodos = [];
 
@@ -52,6 +53,8 @@ function TodoProvider(props) {
       serchedTodos,
       completeTodo,
       deleteTodo,
+      callModal,
+      setCallModal,
     }}>
       {props.children}
     </TodoContext.Provider>

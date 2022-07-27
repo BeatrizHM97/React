@@ -5,6 +5,7 @@ import { TodoSearch } from '../TodoSearch'
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { TodoHeader } from '../TodoHeader';
+import { Modal } from '../Modal';
 
 function AppUI() {
   const {
@@ -12,7 +13,9 @@ function AppUI() {
     loading, 
     serchedTodos, 
     completeTodo, 
-    deleteTodo
+    deleteTodo,
+    callModal,
+    setCallModal
   } = useContext(TodoContext);
   return (
     <div className="App">
@@ -33,6 +36,11 @@ function AppUI() {
         />
         ))}
       </TodoList>
+      {!!callModal && (
+        <Modal>
+          <p>{serchedTodos[0]?.text}</p>
+        </Modal>
+      )}
     </div>
   );
 }
