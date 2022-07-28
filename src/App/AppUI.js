@@ -10,8 +10,6 @@ import { TodoForm } from '../TodoForm';
 
 function AppUI() {
   const {
-    error, 
-    loading, 
     serchedTodos, 
     completeTodo, 
     deleteTodo,
@@ -22,10 +20,7 @@ function AppUI() {
       <TodoHeader/>
       <TodoCounter/>
       <TodoSearch/>
-      <TodoList>
-        {error && <p>Desespérate, hubo un error...</p>}
-        {loading && <div className='spiner'></div>}
-        {(!loading && !serchedTodos.length) && <p className='empty'>Vacío</p>}
+      <TodoList>        
         {serchedTodos.map(todo => (
         <TodoItem 
           key={todo.text} 
