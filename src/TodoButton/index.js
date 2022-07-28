@@ -3,11 +3,12 @@ import { TodoContext } from "../TodoContext";
 import './TodoButton.css';
 
 function TodoButton() {
-  const {callModal, setCallModal} = useContext(TodoContext);
+  const {setCallModal} = useContext(TodoContext);
 
   const onClickButton = () => {
-    setCallModal(!callModal);
+    setCallModal(prevState => !prevState);
   }
+
   return (
     <button className="TodoButton" onClick={onClickButton}>
       +

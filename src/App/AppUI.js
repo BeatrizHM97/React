@@ -6,6 +6,7 @@ import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { TodoHeader } from '../TodoHeader';
 import { Modal } from '../Modal';
+import { TodoForm } from '../TodoForm';
 
 function AppUI() {
   const {
@@ -14,8 +15,7 @@ function AppUI() {
     serchedTodos, 
     completeTodo, 
     deleteTodo,
-    callModal,
-    setCallModal
+    callModal
   } = useContext(TodoContext);
   return (
     <div className="App">
@@ -24,8 +24,8 @@ function AppUI() {
       <TodoSearch/>
       <TodoList>
         {error && <p>Desespérate, hubo un error...</p>}
-        {loading && <p>Estamos cargando, no desesperes</p>}
-        {(!loading && !serchedTodos.length) && <p>Crea tu primer TODO!!</p>}
+        {loading && <div className='spiner'></div>}
+        {(!loading && !serchedTodos.length) && <p className='empty'>Vacío</p>}
         {serchedTodos.map(todo => (
         <TodoItem 
           key={todo.text} 
@@ -38,7 +38,7 @@ function AppUI() {
       </TodoList>
       {!!callModal && (
         <Modal>
-          <p>{serchedTodos[0]?.text}</p>
+          <TodoForm/>
         </Modal>
       )}
     </div>
