@@ -4,11 +4,11 @@ function TodoItem(props) {
   return (
     <div className="TodoItem">
       <p className={`${props.completed && 'task-completed'}`}>
-        <img onClick={props.onComplete} src="./img/task.png" alt="task"/> 
+        <img onClick={props.onComplete} src="react-project/./img/task.png" alt="task"/> 
         {props.text}
       </p>
       <button onClick={props.onDelete}>
-        <img src="./img/delete.png" alt="delete"/>
+        <img src="react-project/./img/delete.png" alt="delete"/>
       </button>
     </div>
   );

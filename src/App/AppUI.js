@@ -1,27 +1,41 @@
 import { useContext } from 'react';
 import { TodoContext } from '../TodoContext';
-import { TodoCounter } from '../TodoCounter';
-import { TodoSearch } from '../TodoSearch'
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { TodoHeader } from '../TodoHeader';
+import { TodoContainer } from '../TodoContainer';
+import { TodoCounter } from '../TodoCounter';
+import { TodoSearch } from '../TodoSearch'
 import { Modal } from '../Modal';
 import { TodoForm } from '../TodoForm';
 
 function AppUI() {
   const {
-    serchedTodos, 
+    searchedTodos, 
     completeTodo, 
     deleteTodo,
-    callModal
+    callModal,
+    totalTodos, 
+    completedTodos,
+    searchValue, 
+    setSearchValue
   } = useContext(TodoContext);
   return (
     <div className="App">
       <TodoHeader/>
-      <TodoCounter/>
-      <TodoSearch/>
+      <TodoContainer>
+        <TodoCounter
+          totalTodos={totalTodos}
+          completedTodos={completedTodos}
+        />
+        <TodoSearch
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+        />
+      </TodoContainer>
+      
       <TodoList>        
-        {serchedTodos.map(todo => (
+        {searchedTodos.map(todo => (
         <TodoItem 
           key={todo.text} 
           text={todo.text}

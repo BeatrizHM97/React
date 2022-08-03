@@ -1,17 +1,13 @@
-import { useContext } from "react";
-import { TodoContext } from "../TodoContext";
 import './TodoSearch.css'
 
-function TodoSearch() {
-  const {searchValue, setSearchValue} = useContext(TodoContext);
-
+function TodoSearch({searchValue, setSearchValue}) {
   const onSearchValueChange = (event) => {
     setSearchValue(event.target.value);
   }
 
   return (
     <label className="TodoSearch">
-      <img src="./img/search.png" alt="search"></img>
+      <img src="react-project/./img/search.png" alt="search"></img>
       <input onChange={onSearchValueChange} value={searchValue} placeholder="Buscar"/>
     </label>
   );

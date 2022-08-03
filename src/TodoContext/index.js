@@ -14,20 +14,20 @@ function TodoProvider(props) {
   const [searchValue, setSearchValue] = useState('');
   const [callModal, setCallModal] = useState(false);
 
-  let serchedTodos = [];
+  let searchedTodos = [];
 
   if(!searchValue.length >= 1) {
-    serchedTodos = todos;
+    searchedTodos = todos;
   } else {
-    serchedTodos = todos.filter(todo => {
+    searchedTodos = todos.filter(todo => {
       const todoText = todo.text.toLowerCase();
       const searchText = searchValue.toLowerCase();
       return todoText.includes(searchText);
     });
   }
 
-  const completedTodos = serchedTodos.filter(todo => !!todo.completed).length;
-  const totalTodos =  serchedTodos.length;
+  const completedTodos = searchedTodos.filter(todo => !!todo.completed).length;
+  const totalTodos =  searchedTodos.length;
 
   const addTodo = (text) => {
     const newTodos = [...todos];
@@ -59,7 +59,7 @@ function TodoProvider(props) {
       completedTodos,
       searchValue,
       setSearchValue,
-      serchedTodos,
+      searchedTodos: searchedTodos,
       addTodo,
       completeTodo,
       deleteTodo,

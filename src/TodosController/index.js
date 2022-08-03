@@ -5,12 +5,12 @@ import { TodoEmpty } from './TodoEmpty';
 import { TodoError } from "./TodoError";
 
 function TodosController() {
-    const {loading, serchedTodos, error} = useContext(TodoContext);
+    const {loading, searchedTodos, error} = useContext(TodoContext);
 
     return (
         <>
             {loading && <TodoLoading/>}
-            {(!loading && !serchedTodos.length) && <TodoEmpty/>}
+            {(!loading && !searchedTodos.length) && <TodoEmpty/>}
             {error && <TodoError/> }
         </>
     );
