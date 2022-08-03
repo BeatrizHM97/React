@@ -1,11 +1,8 @@
-import { useContext } from "react";
-import { TodoContext } from "../TodoContext";
 import {TodoLoading} from './TodoLoading';
 import { TodoEmpty } from './TodoEmpty';
 import { TodoError } from "./TodoError";
 
-function TodosController() {
-    const {loading, searchedTodos, error} = useContext(TodoContext);
+function TodosController({loading, searchedTodos, error}) {
 
     return (
         <>

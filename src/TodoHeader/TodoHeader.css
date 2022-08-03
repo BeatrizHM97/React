@@ -10,3 +10,18 @@
     color: #e66767;
     font-size: 18px;
 }
+
+.TodoButton {
+  border-radius: 20px;
+  border: 1px solid #e66767;
+  background-color: #e66767;
+  color: #fff;
+  font-size: 32px;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+.TodoButton:hover {
+  background: transparent;
+  color: #e66767;
+}
