@@ -30,7 +30,7 @@ function App() {
       <TodoHeader
         setCallModal={setCallModal}
       />
-      <TodoContainer>
+      <TodoContainer loading={loading}>
         <TodoCounter
           totalTodos={totalTodos}
           completedTodos={completedTodos}

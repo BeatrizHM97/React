@@ -1,7 +1,10 @@
-function TodoContainer({ children }){
+import { Children, cloneElement } from "react";
+
+function TodoContainer({ children, loading }){
   return (
     <>
-      { children }
+      {  Children.toArray(children)
+      .map(child => cloneElement(child, { loading: loading })) }
     </>
   );
 }
