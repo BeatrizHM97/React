@@ -57,7 +57,7 @@ function useTodos() {
       completedTodos,
       searchValue,
       setSearchValue,
-      searchedTodos: searchedTodos,
+      searchedTodos,
       addTodo,
       completeTodo,
       deleteTodo,

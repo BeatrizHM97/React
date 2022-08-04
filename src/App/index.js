@@ -44,8 +44,9 @@ function App() {
       <TodoList>  
         <TodosController
           loading={loading}
-          searchedTodos={searchedTodos}
           error={error}
+          totalTodos={totalTodos}
+          searchValue={searchValue}
         />        
         {searchedTodos.map(todo => (
         <TodoItem 
