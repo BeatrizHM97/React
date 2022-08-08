@@ -1,0 +1,40 @@
+.ChangeAlert-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(32,35,41,.8);
+  z-index: 2;
+}
+.ChangeAlert {
+  position: fixed;
+  bottom: 0;
+  right: -10px;
+  left: -10px;
+  text-align: center;
+  padding: 34px;
+  background: #000;
+}
+
+.ChangeAlert p, .ChangeAlert span {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.ChangeAlert button {
+  background-color: #e66767;
+  border: 1px solid #e66767;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.ChangeAlert button:hover {
+  background-color: #fff;
+  border: 1px solid #e66767;
+  color: #e66767;
+}

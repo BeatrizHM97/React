@@ -8,6 +8,7 @@ import { TodoSearch } from '../TodoSearch'
 import { Modal } from '../Modal';
 import { TodoForm } from '../TodoForm';
 import { TodosController } from '../TodosController';
+import { ChangeAlertWithStorageListener } from '../ChangeAlert';
 import './App.css';
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
     callModal,
     setCallModal,
     loading, 
-    error
+    error,
+    sincronizeTodos,
   } = useTodos();
   return (
     <div className="App">
@@ -48,7 +50,7 @@ function App() {
           totalTodos={totalTodos}
           searchValue={searchValue}
         />        
-        {searchedTodos.map(todo => (
+        {!loading && !error && searchedTodos.map(todo => (
         <TodoItem 
           key={todo.text} 
           text={todo.text}
@@ -66,6 +68,10 @@ function App() {
           />
         </Modal>
       )}
+
+      <ChangeAlertWithStorageListener 
+        sincronize={sincronizeTodos}
+      />
     </div>
   );
 }
