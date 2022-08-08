@@ -8,7 +8,7 @@ import { TodoSearch } from '../TodoSearch'
 import { Modal } from '../Modal';
 import { TodoForm } from '../TodoForm';
 import { TodosController } from '../TodosController';
-import { ChangeAlertWithStorageListener } from '../ChangeAlert';
+import { ChangeAlert } from '../ChangeAlert';
 import './App.css';
 
 function App() {
@@ -69,7 +69,7 @@ function App() {
         </Modal>
       )}
 
-      <ChangeAlertWithStorageListener 
+      <ChangeAlert 
         sincronize={sincronizeTodos}
       />
     </div>
